@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary Multiple Choice Quiz</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .question {
+        margin: 20px 0;
+        padding: 15px;
+        border-radius: 10px;
+        background: #fafafa;
+      }
+
+      .correct {
+        background: #d4edda;
+      }
+
+      .wrong {
+        background: #f8d7da;
+      }
+
+      .answer {
+        color: #006400;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      button {
+        padding: 12px 25px;
+        font-size: 17px;
+        cursor: pointer;
+      }
+
+      #score {
+        font-size: 25px;
+        color: blue;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      label {
+        display: block;
+        margin: 6px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Vocabulary Multiple Choice Quiz</h1>
+
+      <div id="quiz">
+        <!-- ================= QUIZ 1 ================= -->
+
+        <div class="question" id="q1">
+          <p>
+            <b>1.</b> Many people dream of escaping the ________ and living in
+            the countryside.
+          </p>
+
+          <label><input type="radio" name="q1" value="A" /> A. due date</label>
+          <label
+            ><input type="radio" name="q1" value="B" /> B. concrete
+            jungle</label
+          >
+          <label
+            ><input type="radio" name="q1" value="C" /> C. construction</label
+          >
+          <label><input type="radio" name="q1" value="D" /> D. mental</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q2">
+          <p>
+            <b>2.</b> The new bridge is still under ________, so drivers must
+            use another route.
+          </p>
+
+          <label><input type="radio" name="q2" value="A" /> A. physical</label>
+          <label><input type="radio" name="q2" value="B" /> B. downtown</label>
+          <label
+            ><input type="radio" name="q2" value="C" /> C. construction</label
+          >
+          <label><input type="radio" name="q2" value="D" /> D. minimise</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q3">
+          <p>
+            <b>3.</b> We spent the afternoon shopping and eating in the ________
+            area of the city.
+          </p>
+
+          <label><input type="radio" name="q3" value="A" /> A. downtown</label>
+          <label><input type="radio" name="q3" value="B" /> B. fattening</label>
+          <label><input type="radio" name="q3" value="C" /> C. mental</label>
+          <label><input type="radio" name="q3" value="D" /> D. due date</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q4">
+          <p>
+            <b>4.</b> Regular exercise is important for both your ________ and
+            mental health.
+          </p>
+
+          <label
+            ><input type="radio" name="q4" value="A" /> A. concrete
+            jungle</label
+          >
+          <label><input type="radio" name="q4" value="B" /> B. physical</label>
+          <label
+            ><input type="radio" name="q4" value="C" /> C. construction</label
+          >
+          <label><input type="radio" name="q4" value="D" /> D. minimise</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q5">
+          <p>
+            <b>5.</b> Despite failing the test, she remained ________ about her
+            future.
+          </p>
+
+          <label><input type="radio" name="q5" value="A" /> A. fattening</label>
+          <label><input type="radio" name="q5" value="B" /> B. physical</label>
+          <label
+            ><input type="radio" name="q5" value="C" /> C. optimistic</label
+          >
+          <label><input type="radio" name="q5" value="D" /> D. downtown</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q6">
+          <p>
+            <b>6.</b> The company is trying to ________ waste and save money.
+          </p>
+
+          <label><input type="radio" name="q6" value="A" /> A. minimise</label>
+          <label><input type="radio" name="q6" value="B" /> B. construct</label>
+          <label><input type="radio" name="q6" value="C" /> C. postpone</label>
+          <label><input type="radio" name="q6" value="D" /> D. hang out</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q7">
+          <p>
+            <b>7.</b> Don't forget that the ________ for this project is next
+            Friday.
+          </p>
+
+          <label
+            ><input type="radio" name="q7" value="A" /> A. concrete
+            jungle</label
+          >
+          <label><input type="radio" name="q7" value="B" /> B. due date</label>
+          <label><input type="radio" name="q7" value="C" /> C. downtown</label>
+          <label
+            ><input type="radio" name="q7" value="D" /> D. construction</label
+          >
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q8">
+          <p><b>8.</b> Meditation can help improve your ________ well-being.</p>
+
+          <label><input type="radio" name="q8" value="A" /> A. physical</label>
+          <label><input type="radio" name="q8" value="B" /> B. fattening</label>
+          <label><input type="radio" name="q8" value="C" /> C. mental</label>
+          <label
+            ><input type="radio" name="q8" value="D" /> D. optimistic</label
+          >
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q9">
+          <p><b>9.</b> Eating too much fast food can be very ________.</p>
+
+          <label
+            ><input type="radio" name="q9" value="A" /> A. optimistic</label
+          >
+          <label><input type="radio" name="q9" value="B" /> B. fattening</label>
+          <label><input type="radio" name="q9" value="C" /> C. mental</label>
+          <label><input type="radio" name="q9" value="D" /> D. downtown</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q10">
+          <p>
+            <b>10.</b> After moving from a small village to a huge ________, he
+            missed the quiet lifestyle.
+          </p>
+
+          <label><input type="radio" name="q10" value="A" /> A. due date</label>
+          <label><input type="radio" name="q10" value="B" /> B. minimise</label>
+          <label
+            ><input type="radio" name="q10" value="C" /> C. concrete
+            jungle</label
+          >
+          <label><input type="radio" name="q10" value="D" /> D. physical</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q11">
+          <p>
+            <b>11.</b> The teacher is very ________ that all her students will
+            pass the exam.
+          </p>
+
+          <label
+            ><input type="radio" name="q11" value="A" /> A. optimistic</label
+          >
+          <label
+            ><input type="radio" name="q11" value="B" /> B. fattening</label
+          >
+          <label
+            ><input type="radio" name="q11" value="C" /> C. construction</label
+          >
+          <label><input type="radio" name="q11" value="D" /> D. due date</label>
+
+          <div class="answer"></div>
+        </div>
+
+        <div class="question" id="q12">
+          <p>
+            <b>12.</b> Too much screen time may affect both ________ and
+            physical health.
+          </p>
+
+          <label><input type="radio" name="q12" value="A" /> A. downtown</label>
+          <label
+            ><input type="radio" name="q12" value="B" /> B. construction</label
+          >
+          <label><input type="radio" name="q12" value="C" /> C. mental</label>
+          <label
+            ><input type="radio" name="q12" value="D" /> D. concrete
+            jungle</label
+          >
+
+          <div class="answer"></div>
+        </div>
+      </div>
+    </div>
+    <!-- ================= QUIZ 2 ================= -->
+
+    <div class="question" id="q13">
+      <p><b>13.</b> We have to hand in our history ________ by Friday.</p>
+
+      <label><input type="radio" name="q13" value="A" /> A. hygiene</label>
+      <label><input type="radio" name="q13" value="B" /> B. assignment</label>
+      <label><input type="radio" name="q13" value="C" /> C. facility</label>
+      <label><input type="radio" name="q13" value="D" /> D. anxiety</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q14">
+      <p>
+        <b>14.</b> If you miss the project ________, your teacher may deduct
+        points.
+      </p>
+
+      <label><input type="radio" name="q14" value="A" /> A. amenities</label>
+      <label><input type="radio" name="q14" value="B" /> B. additional</label>
+      <label><input type="radio" name="q14" value="C" /> C. deadline</label>
+      <label><input type="radio" name="q14" value="D" /> D. leftover</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q15">
+      <p>
+        <b>15.</b> Students should dress ________ when attending a formal school
+        ceremony.
+      </p>
+
+      <label><input type="radio" name="q15" value="A" /> A. liveable</label>
+      <label
+        ><input type="radio" name="q15" value="B" /> B. appropriately</label
+      >
+      <label><input type="radio" name="q15" value="C" /> C. itchy</label>
+      <label><input type="radio" name="q15" value="D" /> D. pricey</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q16">
+      <p>
+        <b>16.</b> Many teenagers experience ________ before important exams.
+      </p>
+
+      <label><input type="radio" name="q16" value="A" /> A. anxiety</label>
+      <label><input type="radio" name="q16" value="B" /> B. facility</label>
+      <label><input type="radio" name="q16" value="C" /> C. assignment</label>
+      <label><input type="radio" name="q16" value="D" /> D. hygiene</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q17">
+      <p>
+        <b>17.</b> With hard work and determination, you can ________ your
+        goals.
+      </p>
+
+      <label><input type="radio" name="q17" value="A" /> A. minimise</label>
+      <label><input type="radio" name="q17" value="B" /> B. accomplish</label>
+      <label><input type="radio" name="q17" value="C" /> C. postpone</label>
+      <label><input type="radio" name="q17" value="D" /> D. construct</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q18">
+      <p><b>18.</b> The hotel charges an ________ fee for airport pickup.</p>
+
+      <label><input type="radio" name="q18" value="A" /> A. leftover</label>
+      <label><input type="radio" name="q18" value="B" /> B. mental</label>
+      <label><input type="radio" name="q18" value="C" /> C. additional</label>
+      <label><input type="radio" name="q18" value="D" /> D. itchy</label>
+
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" id="q19">
+      <p>
+        <b>19.</b> Although the apartment is nice, it's too ________ for most
+        students.
+      </p>
+
+      <label><input type="radio" name="q19" value="A" /> A. liveable</label>
+      <label><input type="radio" name="q19" value="B" /> B. pricey</label>
+      <label><input type="radio" name="q19" value="C" /> C. downtown</label>
+      <label><input type="radio" name="q19" value="D" /> D. physical</label>
+
+      <div class="answer"></div>
+    </div>
+    <div class="question" id="q20">
+
+<p><b>20.</b> The resort offers many modern ________, including a swimming pool and a spa.</p>
+
+<label><input type="radio" name="q20" value="A"> A. due dates</label>
+<label><input type="radio" name="q20" value="B"> B. facilities</label>
+<label><input type="radio" name="q20" value="C"> C. leftovers</label>
+<label><input type="radio" name="q20" value="D"> D. assignments</label>
+
+<div class="answer"></div>
+
+</div>
+
+<div class="question" id="q21">
+
+<p><b>21.</b> The sports center has excellent ________, such as tennis courts and a gym.</p>
+
+<label><input type="radio" name="q21" value="A"> A. facilities</label>
+<label><input type="radio" name="q21" value="B"> B. anxiety</label>
+<label><input type="radio" name="q21" value="C"> C. hygiene</label>
+<label><input type="radio" name="q21" value="D"> D. deadlines</label>
+
+<div class="answer"></div>
+
+</div>
+
+<div class="question" id="q22">
+
+<p><b>22.</b> This sweater is made of rough wool, so it feels very ________.</p>
+
+<label><input type="radio" name="q22" value="A"> A. appropriately</label>
+<label><input type="radio" name="q22" value="B"> B. liveable</label>
+<label><input type="radio" name="q22" value="C"> C. itchy</label>
+<label><input type="radio" name="q22" value="D"> D. pricey</label>
+
+<div class="answer"></div>
+
+</div>
+
+<div class="question" id="q23">
+
+<p><b>23.</b> Thanks to its clean environment and low crime rate, the city is very ________.</p>
+
+<label><input type="radio" name="q23" value="A"> A. additional</label>
+<label><input type="radio" name="q23" value="B"> B. liveable</label>
+<label><input type="radio" name="q23" value="C"> C. leftover</label>
+<label><input type="radio" name="q23" value="D"> D. anxiety</label>
+
+<div class="answer"></div>
+
+</div>
+
+<div class="question" id="q24">
+
+<p><b>24.</b> We put the ________ pizza in the fridge and ate it the next day.</p>
+
+<label><input type="radio" name="q24" value="A"> A. additional</label>
+<label><input type="radio" name="q24" value="B"> B. leftover</label>
+<label><input type="radio" name="q24" value="C"> C. pricey</label>
+<label><input type="radio" name="q24" value="D"> D. physical</label>
+
+<div class="answer"></div>
+
+</div>
+
+<div class="question" id="q25">
+
+<p><b>25.</b> Good personal ________ includes washing your hands before eating.</p>
+
+<label><input type="radio" name="q25" value="A"> A. facilities</label>
+<label><input type="radio" name="q25" value="B"> B. hygiene</label>
+<label><input type="radio" name="q25" value="C"> C. assignment</label>
+<label><input type="radio" name="q25" value="D"> D. anxiety</label>
+
+<div class="answer"></div>
+
+</div>
+
+</div>
+
+<button onclick="checkAnswers()">Kiểm tra</button>
+
+<div id="score"></div>
+<script>
+
+const answers = {
+q1:"B",
+q2:"C",
+q3:"A",
+q4:"B",
+q5:"C",
+q6:"A",
+q7:"B",
+q8:"C",
+q9:"B",
+q10:"C",
+q11:"A",
+q12:"C",
+q13:"B",
+q14:"C",
+q15:"B",
+q16:"A",
+q17:"B",
+q18:"C",
+q19:"B",
+q20:"B",
+q21:"A",
+q22:"C",
+q23:"B",
+q24:"B",
+q25:"B"
+};
+
+const answerText = {
+q1:"B. concrete jungle",
+q2:"C. construction",
+q3:"A. downtown",
+q4:"B. physical",
+q5:"C. optimistic",
+q6:"A. minimise",
+q7:"B. due date",
+q8:"C. mental",
+q9:"B. fattening",
+q10:"C. concrete jungle",
+q11:"A. optimistic",
+q12:"C. mental",
+q13:"B. assignment",
+q14:"C. deadline",
+q15:"B. appropriately",
+q16:"A. anxiety",
+q17:"B. accomplish",
+q18:"C. additional",
+q19:"B. pricey",
+q20:"B. facilities",
+q21:"A. facilities",
+q22:"C. itchy",
+q23:"B. liveable",
+q24:"B. leftover",
+q25:"B. hygiene"
+};
+
+function checkAnswers(){
+
+let score = 0;
+
+for(let i=1;i<=25;i++){
+
+const q = "q"+i;
+
+const selected = document.querySelector(
+'input[name="'+q+'"]:checked'
+);
+
+const box = document.getElementById(q);
+
+const result = box.querySelector(".answer");
+
+box.classList.remove("correct");
+box.classList.remove("wrong");
+
+if(selected){
+
+if(selected.value===answers[q]){
+
+score++;
+
+box.classList.add("correct");
+
+result.innerHTML="✅ Correct";
+
+}else{
+
+box.classList.add("wrong");
+
+result.innerHTML=
+"❌ Correct answer: <b>"+answerText[q]+"</b>";
+
+}
+
+}else{
+
+box.classList.add("wrong");
+
+result.innerHTML=
+"❌ Correct answer: <b>"+answerText[q]+"</b>";
+
+}
+
+}
+document.getElementById("score").innerHTML =
+"Your Score: <span style='color:blue'>" +
+score + " / 25</span>";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles Quiz - B1</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #0077cc;
+      }
+
+      .question {
+        margin-top: 25px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #fafafa;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .correct {
+        color: green;
+      }
+
+      .wrong {
+        color: red;
+      }
+
+      button {
+        margin-top: 30px;
+        padding: 12px 25px;
+        font-size: 17px;
+        background: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #005fa3;
+      }
+
+      #score {
+        margin-top: 25px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Articles (a / an / the / Ø) - B1 Quiz</h1>
+
+      <div id="quiz"></div>
+
+      <button onclick="checkAnswers()">Check Answers</button>
+
+      <div id="score"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. My brother wants to become ________ engineer when he grows up.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "B",
+        },
+
+        {
+          q: "2. We visited ________ Eiffel Tower during our trip to Paris.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "3. She usually has ________ breakfast at 7 a.m.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "D",
+        },
+
+        {
+          q: "4. I bought ________ umbrella because it looked like it was going to rain.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "B",
+        },
+
+        {
+          q: "5. Could you close ________ window, please? It's getting cold.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "6. My father often listens to ________ radio while driving.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "7. We had dinner at ________ Italian restaurant near the station.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "A",
+        },
+
+        {
+          q: "8. Mount Everest is ________ highest mountain in the world.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "9. My grandmother loves growing ________ flowers in her garden.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "D",
+        },
+
+        {
+          q: "10. I need to buy ________ new laptop for school.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "A",
+        },
+
+        {
+          q: "11. My mother is ________ honest person.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "B",
+        },
+
+        {
+          q: "12. ________ Earth moves around the Sun.",
+          options: ["A. A", "B. An", "C. The", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "13. She plays ________ piano very well.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+
+        {
+          q: "14. We went to ________ school by bus this morning.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "D",
+        },
+
+        {
+          q: "15. This is ________ best movie I've seen this year.",
+          options: ["A. a", "B. an", "C. the", "D. Ø"],
+          answer: "C",
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item, index) => {
+        let html = `<div class="question">
+<p><b>${item.q}</b></p>`;
+
+        item.options.forEach((option) => {
+          let letter = option.charAt(0);
+
+          html += `
+<label>
+<input type="radio" name="q${index}" value="${letter}">
+${option}
+</label><br>
+`;
+        });
+
+        html += `<div id="result${index}" class="result"></div></div>`;
+
+        quiz.innerHTML += html;
+      });
+
+      function checkAnswers() {
+        let score = 0;
+
+        questions.forEach((item, index) => {
+          let selected = document.querySelector(
+            `input[name="q${index}"]:checked`,
+          );
+
+          let result = document.getElementById(`result${index}`);
+
+          if (!selected) {
+            result.innerHTML = `❌ No answer. Correct answer: <b>${item.answer}</b>`;
+            result.className = "result wrong";
+          } else if (selected.value === item.answer) {
+            score++;
+
+            result.innerHTML = "✅ Correct";
+            result.className = "result correct";
+          } else {
+            result.innerHTML = `❌ Wrong. Correct answer: <b>${item.answer}</b>`;
+            result.className = "result wrong";
+          }
+        });
+
+        document.getElementById("score").innerHTML =
+          `Your Score: ${score} / ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

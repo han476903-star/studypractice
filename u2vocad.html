@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fill in the Blanks</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .word-bank {
+        background: #eef5ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }
+
+      .question {
+        margin: 18px 0;
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .question input {
+        width: 180px;
+        padding: 6px;
+        font-size: 15px;
+      }
+
+      .correct {
+        background: #d4edda;
+      }
+
+      .wrong {
+        background: #f8d7da;
+      }
+
+      .answer {
+        color: #006400;
+        font-weight: bold;
+      }
+
+      button {
+        padding: 10px 25px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      #score {
+        font-size: 22px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fill in the Blanks</h1>
+
+      <div class="word-bank">
+        <b>Word Bank</b><br /><br />
+        come down with, hang out, get round, delay, postpone, bustling, tram,
+        carry out, congested
+      </div>
+
+      <div id="quiz"></div>
+
+      <button onclick="checkAnswers()">Kiểm tra</button>
+
+      <div id="score"></div>
+    </div>
+
+    <script>
+      const questions = [
+        "My little brother couldn't go to school because he had ________ the flu.",
+        "Teenagers often ________ at the shopping mall after school.",
+        "It's difficult to ________ the city during rush hour because the roads are so crowded.",
+        "The heavy rain caused a two-hour ________ in the train schedule.",
+        "The school decided to ________ the sports festival until next week because of the storm.",
+        "We took a ________ to the city center instead of driving.",
+        "The streets were so ________ that it was hard to find a quiet place to sit.",
+        "Scientists will ________ more experiments before announcing the final results.",
+        "The traffic is extremely ________ every weekday morning.",
+        "If you don't get enough sleep, you might ________ a cold.",
+        "My friends and I usually ________ at a café on Friday evenings.",
+        "The manager had to ________ the meeting because several important staff members were absent.",
+      ];
+
+      const answers = [
+        "come down with",
+        "hang out",
+        "get round",
+        "delay",
+        "postpone",
+        "tram",
+        "bustling",
+        "carry out",
+        "congested",
+        "come down with",
+        "hang out",
+        "postpone",
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((q, i) => {
+        quiz.innerHTML += `
+<div class="question" id="q${i}">
+<p><b>${i + 1}.</b> ${q}</p>
+<input type="text" id="a${i}">
+<div class="answer" id="result${i}"></div>
+</div>
+`;
+      });
+
+      function checkAnswers() {
+        let score = 0;
+
+        for (let i = 0; i < answers.length; i++) {
+          let user = document
+            .getElementById("a" + i)
+            .value.trim()
+            .toLowerCase();
+
+          let correct = answers[i].toLowerCase();
+
+          let box = document.getElementById("q" + i);
+
+          let result = document.getElementById("result" + i);
+
+          if (user === correct) {
+            score++;
+
+            box.className = "question correct";
+
+            result.innerHTML = "✅ Correct";
+          } else {
+            box.className = "question wrong";
+
+            result.innerHTML = "❌ Correct answer: <b>" + answers[i] + "</b>";
+          }
+        }
+
+        document.getElementById("score").innerHTML =
+          "Your Score: " + score + " / " + answers.length;
+      }
+    </script>
+  </body>
+</html>
