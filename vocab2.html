@@ -1,0 +1,626 @@
+<!doctype html>
+< lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C1–C2 Vocabulary Quiz (Part 1)</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f9;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .question {
+        margin: 28px 0;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .question h3 {
+        margin-bottom: 12px;
+        color: #34495e;
+      }
+
+      label {
+        display: block;
+        padding: 8px;
+        margin: 4px 0;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      label:hover {
+        background: #eef5ff;
+      }
+
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 12px 30px;
+        font-size: 16px;
+        background: #2c7be5;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1a68d1;
+      }
+
+      #result {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 25px;
+      }
+
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+
+      .wrong {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <>
+    <div class="container">
+      <h1>C1–C2 Vocabulary Quiz</h1>
+
+      <form id="quizForm">
+        <div class="question">
+          <h3>
+            1. Although she works for a multinational company, she sees herself
+            as just ________.
+          </h3>
+
+          <label
+            ><input type="radio" name="q1" value="A" /> A. wet behind the
+            ears</label
+          >
+          <label
+            ><input type="radio" name="q1" value="B" /> B. a tiny cog in a vast
+            machine</label
+          >
+          <label
+            ><input type="radio" name="q1" value="C" /> C. at loggerheads</label
+          >
+          <label
+            ><input type="radio" name="q1" value="D" /> D. a bed of roses</label
+          >
+
+          <p id="r1"></p>
+        </div>
+
+        <div class="question">
+          <h3>
+            2. Don't ask Tom to negotiate the contract. He's still ________.
+          </h3>
+
+          <label
+            ><input type="radio" name="q2" value="A" /> A. up in the air</label
+          >
+          <label
+            ><input type="radio" name="q2" value="B" /> B. wet behind the
+            ears</label
+          >
+          <label
+            ><input type="radio" name="q2" value="C" /> C. more than his job's
+            worth</label
+          >
+          <label
+            ><input type="radio" name="q2" value="D" /> D. out of the
+            ordinary</label
+          >
+
+          <p id="r2"></p>
+        </div>
+
+        <div class="question">
+          <h3>3. We only remembered we needed passports at the ________.</h3>
+
+          <label
+            ><input type="radio" name="q3" value="A" /> A. dire straits</label
+          >
+          <label
+            ><input type="radio" name="q3" value="B" /> B. can of worms</label
+          >
+          <label
+            ><input type="radio" name="q3" value="C" /> C. eleventh hour</label
+          >
+          <label><input type="radio" name="q3" value="D" /> D. old score</label>
+
+          <p id="r3"></p>
+        </div>
+
+        <div class="question">
+          <h3>
+            4. Everyone ________ that attendance at meetings is compulsory.
+          </h3>
+
+          <label
+            ><input type="radio" name="q4" value="A" /> A. goes with the
+            flow</label
+          >
+          <label
+            ><input type="radio" name="q4" value="B" /> B. packs a punch</label
+          >
+          <label
+            ><input type="radio" name="q4" value="C" /> C. takes it as
+            read</label
+          >
+          <label
+            ><input type="radio" name="q4" value="D" /> D. settles old
+            scores</label
+          >
+
+          <p id="r4"></p>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const answers = {
+        q1: "B",
+        q2: "B",
+        q3: "C",
+        q4: "C",
+
+        q5: "A",
+        q6: "B",
+        q7: "A",
+        q8: "A",
+        q9: "B",
+        q10: "B",
+        q11: "B",
+        q12: "A",
+        q13: "B",
+        q14: "A",
+        q15: "A",
+        q16: "B",
+        q17: "B",
+        q18: "A",
+        q19: "A",
+        q20: "B",
+        q21: "A",
+        q22: "B",
+        q23: "B",
+        q24: "A",
+        q25: "A",
+        q26: "A",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+
+        for (let key in answers) {
+          let choice = document.querySelector(`input[name="${key}"]:checked`);
+
+          if (document.getElementById("r" + key.substring(1))) {
+            if (choice) {
+              if (choice.value === answers[key]) {
+                score++;
+                document.getElementById("r" + key.substring(1)).innerHTML =
+                  '<span class="correct">✔ Correct</span>';
+              } else {
+                document.getElementById("r" + key.substring(1)).innerHTML =
+                  '<span class="wrong">✘ Correct answer: ' +
+                  answers[key] +
+                  "</span>";
+              }
+            } else {
+              document.getElementById("r" + key.substring(1)).innerHTML =
+                '<span class="wrong">✘ Correct answer: ' +
+                answers[key] +
+                "</span>";
+            }
+          }
+        }
+
+        document.getElementById("result").innerHTML =
+          "You scored " + score + " / 4";
+      }
+    </script>
+    <div class="question">
+      <h3>
+        5. The tiny speaker may look unimpressive, but it really ________.
+      </h3>
+
+      <label><input type="radio" name="q5" value="A" /> A. packs a punch</label>
+      <label><input type="radio" name="q5" value="B" /> B. opens up</label>
+      <label
+        ><input type="radio" name="q5" value="C" /> C. falls on its feet</label
+      >
+      <label
+        ><input type="radio" name="q5" value="D" /> D. runs a tight ship</label
+      >
+
+      <p id="r5"></p>
+    </div>
+
+    <div class="question">
+      <h3>6. My little sister is absolutely ________ Harry Potter.</h3>
+
+      <label
+        ><input type="radio" name="q6" value="A" /> A. in dire straits</label
+      >
+      <label><input type="radio" name="q6" value="B" /> B. nuts about</label>
+      <label
+        ><input type="radio" name="q6" value="C" /> C. at loggerheads
+        with</label
+      >
+      <label
+        ><input type="radio" name="q6" value="D" /> D. given a rap over the
+        knuckles</label
+      >
+
+      <p id="r6"></p>
+    </div>
+
+    <div class="question">
+      <h3>7. The horror film really ________ me.</h3>
+
+      <label
+        ><input type="radio" name="q7" value="A" /> A. put the wind up</label
+      >
+      <label><input type="radio" name="q7" value="B" /> B. hit the books</label>
+      <label
+        ><input type="radio" name="q7" value="C" /> C. kicked the can down the
+        road</label
+      >
+      <label
+        ><input type="radio" name="q7" value="D" /> D. went with the flow</label
+      >
+
+      <p id="r7"></p>
+    </div>
+
+    <div class="question">
+      <h3>8. The manager was ________ for arriving late again.</h3>
+
+      <label
+        ><input type="radio" name="q8" value="A" /> A. given a rap over the
+        knuckles</label
+      >
+      <label
+        ><input type="radio" name="q8" value="B" /> B. taken his hat off</label
+      >
+      <label
+        ><input type="radio" name="q8" value="C" /> C. set out his stall</label
+      >
+      <label><input type="radio" name="q8" value="D" /> D. up in the air</label>
+
+      <p id="r8"></p>
+    </div>
+
+    <div class="question">
+      <h3>
+        9. The newspaper keeps predicting economic collapse. It's all ________.
+      </h3>
+
+      <label
+        ><input type="radio" name="q9" value="A" /> A. a bed of roses</label
+      >
+      <label
+        ><input type="radio" name="q9" value="B" /> B. doom and gloom</label
+      >
+      <label
+        ><input type="radio" name="q9" value="C" /> C. more than one's job's
+        worth</label
+      >
+      <label><input type="radio" name="q9" value="D" /> D. open up</label>
+
+      <p id="r9"></p>
+    </div>
+    <div class="question">
+      <h3>10. If you want to pass IELTS with Band 8, you'd better ________.</h3>
+
+      <label
+        ><input type="radio" name="q10" value="A" /> A. go with the flow</label
+      >
+      <label
+        ><input type="radio" name="q10" value="B" /> B. hit the books</label
+      >
+      <label
+        ><input type="radio" name="q10" value="C" /> C. settle old scores</label
+      >
+      <label
+        ><input type="radio" name="q10" value="D" /> D. blot your
+        copybook</label
+      >
+
+      <p id="r10"></p>
+    </div>
+
+    <div class="question">
+      <h3>
+        11. After losing his job, he somehow ________ and found an even better
+        one.
+      </h3>
+
+      <label
+        ><input type="radio" name="q11" value="A" /> A. went off
+        half-cocked</label
+      >
+      <label
+        ><input type="radio" name="q11" value="B" /> B. fell on his feet</label
+      >
+      <label
+        ><input type="radio" name="q11" value="C" /> C. packed a punch</label
+      >
+      <label><input type="radio" name="q11" value="D" /> D. opened up</label>
+
+      <p id="r11"></p>
+    </div>
+
+    <div class="question">
+      <h3>12. I'm not going to criticize the CEO publicly. That's ________.</h3>
+
+      <label
+        ><input type="radio" name="q12" value="A" /> A. more than my job's
+        worth</label
+      >
+      <label
+        ><input type="radio" name="q12" value="B" /> B. wet behind the
+        ears</label
+      >
+      <label
+        ><input type="radio" name="q12" value="C" /> C. a bed of roses</label
+      >
+      <label
+        ><input type="radio" name="q12" value="D" /> D. at the eleventh
+        hour</label
+      >
+
+      <p id="r12"></p>
+    </div>
+
+    <div class="question">
+      <h3>13. Life as a professional athlete isn't exactly ________.</h3>
+
+      <label
+        ><input type="radio" name="q13" value="A" /> A. a tiny cog in a vast
+        machine</label
+      >
+      <label
+        ><input type="radio" name="q13" value="B" /> B. a bed of roses</label
+      >
+      <label
+        ><input type="radio" name="q13" value="C" /> C. up in the air</label
+      >
+      <label
+        ><input type="radio" name="q13" value="D" /> D. doom and gloom</label
+      >
+
+      <p id="r13"></p>
+    </div>
+
+    <div class="question">
+      <h3>
+        14. I really ________ all the volunteers who helped after the flood.
+      </h3>
+
+      <label
+        ><input type="radio" name="q14" value="A" /> A. take my hat off
+        to</label
+      >
+      <label
+        ><input type="radio" name="q14" value="B" /> B. kick the can down the
+        road</label
+      >
+      <label
+        ><input type="radio" name="q14" value="C" /> C. go with the flow</label
+      >
+      <label
+        ><input type="radio" name="q14" value="D" /> D. blot my copybook</label
+      >
+
+      <p id="r14"></p>
+    </div>
+
+    <div class="question">
+      <h3>15. His solution was completely ________ and impressed everyone.</h3>
+
+      <label
+        ><input type="radio" name="q15" value="A" /> A. out of the
+        ordinary</label
+      >
+      <label
+        ><input type="radio" name="q15" value="B" /> B. wet behind the
+        ears</label
+      >
+      <label><input type="radio" name="q15" value="C" /> C. nuts about</label>
+      <label
+        ><input type="radio" name="q15" value="D" /> D. up in the air</label
+      >
+
+      <p id="r15"></p>
+    </div>
+
+    <div class="question">
+      <h3>16. Without financial support, the company is now ________.</h3>
+
+      <label
+        ><input type="radio" name="q16" value="A" /> A. at loggerheads</label
+      >
+      <label
+        ><input type="radio" name="q16" value="B" /> B. in dire straits</label
+      >
+      <label
+        ><input type="radio" name="q16" value="C" /> C. more than its job's
+        worth</label
+      >
+      <label
+        ><input type="radio" name="q16" value="D" /> D. given a rap over the
+        knuckles</label
+      >
+
+      <p id="r16"></p>
+    </div>
+
+    <div class="question">
+      <h3>17. The candidate ________ clearly during the first debate.</h3>
+
+      <label
+        ><input type="radio" name="q17" value="A" /> A. settled old
+        scores</label
+      >
+      <label
+        ><input type="radio" name="q17" value="B" /> B. set out his stall</label
+      >
+      <label
+        ><input type="radio" name="q17" value="C" /> C. hit the books</label
+      >
+      <label
+        ><input type="radio" name="q17" value="D" /> D. opened up a can of
+        worms</label
+      >
+
+      <p id="r17"></p>
+    </div>
+
+    <div class="question">
+      <h3>
+        18. He ________ and accused everyone before hearing the full story.
+      </h3>
+
+      <label
+        ><input type="radio" name="q18" value="A" /> A. went off
+        half-cocked</label
+      >
+      <label
+        ><input type="radio" name="q18" value="B" /> B. took it as read</label
+      >
+      <label
+        ><input type="radio" name="q18" value="C" /> C. packed a punch</label
+      >
+      <label
+        ><input type="radio" name="q18" value="D" /> D. fell on his feet</label
+      >
+
+      <p id="r18"></p>
+    </div>
+    <div class="question">
+<h3>19. The two brothers are constantly ________ over money.</h3>
+
+<label><input type="radio" name="q19" value="A"> A. at loggerheads</label>
+<label><input type="radio" name="q19" value="B"> B. nuts about</label>
+<label><input type="radio" name="q19" value="C"> C. in dire straits</label>
+<label><input type="radio" name="q19" value="D"> D. wet behind the ears</label>
+
+<p id="r19"></p>
+</div>
+
+<div class="question">
+<h3>20. Whether the concert will go ahead is still ________.</h3>
+
+<label><input type="radio" name="q20" value="A"> A. more than my job's worth</label>
+<label><input type="radio" name="q20" value="B"> B. up in the air</label>
+<label><input type="radio" name="q20" value="C"> C. a bed of roses</label>
+<label><input type="radio" name="q20" value="D"> D. at the eleventh hour</label>
+
+<p id="r20"></p>
+</div>
+
+<div class="question">
+<h3>21. The captain ________, so everyone knew exactly what to do.</h3>
+
+<label><input type="radio" name="q21" value="A"> A. ran a tight ship</label>
+<label><input type="radio" name="q21" value="B"> B. settled old scores</label>
+<label><input type="radio" name="q21" value="C"> C. opened up</label>
+<label><input type="radio" name="q21" value="D"> D. put the wind up</label>
+
+<p id="r21"></p>
+</div>
+
+<div class="question">
+<h3>22. If we investigate that issue, we'll ________.</h3>
+
+<label><input type="radio" name="q22" value="A"> A. take it for granted</label>
+<label><input type="radio" name="q22" value="B"> B. open up a can of worms</label>
+<label><input type="radio" name="q22" value="C"> C. fall on our feet</label>
+<label><input type="radio" name="q22" value="D"> D. be nuts about it</label>
+
+<p id="r22"></p>
+</div>
+
+<div class="question">
+<h3>23. Instead of solving the housing crisis, the government simply ________.</h3>
+
+<label><input type="radio" name="q23" value="A"> A. took its hat off</label>
+<label><input type="radio" name="q23" value="B"> B. kicked the can down the road</label>
+<label><input type="radio" name="q23" value="C"> C. packed a punch</label>
+<label><input type="radio" name="q23" value="D"> D. hit the books</label>
+
+<p id="r23"></p>
+</div>
+
+<div class="question">
+<h3>24. The two politicians used the TV debate to ________.</h3>
+
+<label><input type="radio" name="q24" value="A"> A. settle old scores</label>
+<label><input type="radio" name="q24" value="B"> B. go with the flow</label>
+<label><input type="radio" name="q24" value="C"> C. fall on their feet</label>
+<label><input type="radio" name="q24" value="D"> D. be given a rap over the knuckles</label>
+
+<p id="r24"></p>
+</div>
+
+<div class="question">
+<h3>25. By cheating in the exam, he really ________.</h3>
+
+<label><input type="radio" name="q25" value="A"> A. blotted his copybook</label>
+<label><input type="radio" name="q25" value="B"> B. ran a tight ship</label>
+<label><input type="radio" name="q25" value="C"> C. packed a punch</label>
+<label><input type="radio" name="q25" value="D"> D. took it as read</label>
+
+<p id="r25"></p>
+</div>
+
+<div class="question">
+<h3>26. (Bonus) Rather than arguing with everyone, she decided to ________.</h3>
+
+<label><input type="radio" name="q26" value="A"> A. go with the flow</label>
+<label><input type="radio" name="q26" value="B"> B. put the wind up</label>
+<label><input type="radio" name="q26" value="C"> C. run a tight ship</label>
+<label><input type="radio" name="q26" value="D"> D. set out her stall</label>
+
+<p id="r26"></p>
+</div>
+
+<button type="button" onclick="checkAnswers()">Submit</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+</body>
+</html>
