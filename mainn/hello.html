@@ -1,14 +1,108 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Tiếng Anh Đại Trà</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f6bfd5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Baloo 2", cursive;
+      }
+
+      /* Tiêu đề */
+      .title {
+        position: absolute;
+        left: 45px;
+        top: 45px;
+
+        background: #ffe0b7;
+        color: #222;
+
+        padding: 15px 25px;
+
+        font-family: "Oswald", sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+      }
+
+      /* Khối chứa nút */
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        align-items: center;
+      }
+
+      /* Nút chung */
+      .btn {
+        text-decoration: none;
+        width: 290px;
+        height: 78px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 45px;
+
+        font-size: 34px;
+        font-weight: 700;
+
+        transition: 0.25s;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* Unit 1 */
+      .btn1 {
+        background: #ff6f8d;
+        color: white;
+      }
+
+      /* Unit 2 */
+      .btn2 {
+        background: #241b1d;
+        color: #ffe6ef;
+      }
+
+      /* Unit 4 */
+      .btn3 {
+        background: #fff2f2;
+        color: #ff6f8d;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Tiếng Anh Đại Trà</h1>
-    <a href="unit1.html">Unit 1</a><br />
-    <a href="unit2.html">Unit 2 and Unit 3</a><br />
-    <a href="unit4.html">Unit 4</a>
+    <div class="title">Phần Anh đại trà</div>
+
+    <div class="menu">
+      <a class="btn btn1" href="unit1.html"> Unit 1 </a>
+
+      <a class="btn btn2" href="unit2.html"> Unit 2 and 3 </a>
+
+      <a class="btn btn3" href="unit4.html"> Unit 4 </a>
+    </div>
   </body>
 </html>
