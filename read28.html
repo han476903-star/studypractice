@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading 28 - Toxic Behavior</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        padding: 20px;
+        border-left: 6px solid #3498db;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fafafa;
+      }
+
+      .question h3 {
+        margin-top: 0;
+      }
+
+      .option {
+        display: block;
+        margin: 8px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reading 28</h1>
+
+      <h2>Why Some People Behave Toxicly Toward Others</h2>
+
+      <div class="passage">
+        <p>
+          People who frequently engage in toxic behavior are often perceived as
+          intentionally rude, manipulative, or overly critical. While such
+          actions can certainly stem from selfishness or a desire for control,
+          psychologists suggest that toxic behavior may sometimes originate from
+          deeper insecurities. Individuals with low self-esteem, unresolved
+          emotional issues, or a strong fear of failure may attempt to protect
+          their self-image by belittling others. By drawing attention to someone
+          else's weaknesses, they may temporarily avoid confronting their own
+          shortcomings.
+        </p>
+
+        <p>
+          However, understanding the origins of toxic behavior does not justify
+          it. Persistent negativity can damage relationships, reduce trust, and
+          create emotionally unhealthy environments. Moreover, toxic individuals
+          are often unaware of the long-term consequences of their actions,
+          particularly when such behavior has become habitual. For this reason,
+          experts emphasize the importance of self-awareness and emotional
+          intelligence. Recognizing destructive patterns is often the first step
+          toward developing healthier ways of interacting with others.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main purpose of the passage?",
+          a: [
+            "A. To explain possible causes and consequences of toxic behavior.",
+            "B. To argue that toxic people should be avoided completely.",
+            "C. To prove that low self-esteem always causes toxic behavior.",
+            "D. To describe different personality types.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: '2. The word "belittling" in paragraph 1 is closest in meaning to:',
+          a: [
+            "A. supporting",
+            "B. criticizing or making someone seem unimportant",
+            "C. encouraging",
+            "D. observing",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "3. According to the passage, some people behave toxicly because they:",
+          a: [
+            "A. naturally enjoy hurting others.",
+            "B. want to become more popular.",
+            "C. may be attempting to protect their self-image.",
+            "D. lack social skills.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: '4. What does the pronoun "they" in paragraph 1 refer to?',
+          a: [
+            "A. psychologists",
+            "B. weaknesses",
+            "C. individuals with insecurities",
+            "D. other people",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "5. Which of the following can be inferred from the passage?",
+          a: [
+            "A. Toxic behavior is always intentional.",
+            "B. Emotional insecurity may influence how people treat others.",
+            "C. Most toxic individuals are aware of the consequences of their actions.",
+            "D. Toxic behavior cannot be changed.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '6. Why does the author mention "low self-esteem" and "fear of failure"?',
+          a: [
+            "A. To provide examples of factors that may contribute to toxic behavior.",
+            "B. To show that toxic people are usually unsuccessful.",
+            "C. To compare different psychological disorders.",
+            "D. To prove that insecurity is more common than confidence.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: '7. The word "habitual" in paragraph 2 is closest in meaning to:',
+          a: [
+            "A. accidental",
+            "B. frequent and repeated",
+            "C. harmful",
+            "D. intentional",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "8. Which statement would the author most likely agree with?",
+          a: [
+            "A. Understanding toxic behavior means excusing it.",
+            "B. Toxic behavior rarely affects relationships.",
+            "C. Self-awareness can help individuals change unhealthy behaviors.",
+            "D. People are born toxic and cannot change.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "9. What function does the second paragraph serve?",
+          a: [
+            "A. It introduces the causes of toxic behavior.",
+            "B. It explains why toxic behavior should be accepted.",
+            "C. It discusses the consequences of toxic behavior and possible solutions.",
+            "D. It compares toxic people with healthy individuals.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "10. Which of the following best summarizes the passage?",
+          a: [
+            "A. Toxic people deliberately harm others for personal gain.",
+            "B. Toxic behavior may arise from insecurity, but it can still have harmful effects and should be addressed through self-awareness.",
+            "C. Low self-esteem is the only cause of toxic behavior.",
+            "D. Toxic individuals are usually unaware of other people's feelings.",
+          ],
+          correct: 1,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        div.innerHTML = `<h3>${item.q}</h3>`;
+
+        item.a.forEach((choice, i) => {
+          const btn = document.createElement("div");
+          btn.className = "option";
+          btn.innerHTML = choice;
+
+          btn.onclick = function () {
+            if (div.dataset.done) return;
+
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (i === item.correct) {
+              btn.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              btn.classList.add("wrong");
+
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(btn);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

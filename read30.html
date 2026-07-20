@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading 30 - The Invention of Paper</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        border-left: 6px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .option {
+        display: block;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Reading 30</h1>
+
+      <h2>The Invention of Paper</h2>
+
+      <div class="passage">
+        <p>
+          Before paper was invented, people recorded information on a variety of
+          materials, including stone, clay tablets, bamboo strips, and animal
+          skins. While these materials served their purpose, many of them were
+          either heavy, expensive, or difficult to produce. As civilizations
+          grew and the need to preserve knowledge increased, a more practical
+          writing material became necessary. This need eventually led to one of
+          the most important inventions in human history: paper.
+        </p>
+
+        <p>
+          Paper is widely believed to have been invented in ancient China during
+          the early second century CE by a court official named Cai Lun.
+          According to historical accounts, he developed a method of producing
+          paper from materials such as tree bark, hemp, old cloth, and fishing
+          nets. Compared with existing writing surfaces, paper was lighter,
+          cheaper, and easier to manufacture. Over time, papermaking techniques
+          spread from China to other parts of Asia, the Middle East, and
+          eventually Europe. The widespread adoption of paper played a crucial
+          role in the preservation and dissemination of knowledge, contributing
+          significantly to education, administration, and cultural development.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main purpose of the passage?",
+          a: [
+            "A. To explain why stone tablets were superior to paper.",
+            "B. To describe the invention of paper and its historical significance.",
+            "C. To compare different ancient civilizations.",
+            "D. To discuss modern methods of paper production.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '2. The word "preserve" in paragraph 1 is closest in meaning to:',
+          a: [
+            "A. destroy",
+            "B. record",
+            "C. protect and maintain",
+            "D. translate",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "3. According to the passage, which of the following was a disadvantage of earlier writing materials?",
+          a: [
+            "A. They were difficult to read.",
+            "B. They were often heavy or expensive.",
+            "C. They could not store information.",
+            "D. They were available only in China.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "4. Why was paper considered an improvement over previous writing surfaces?",
+          a: [
+            "A. It was more decorative.",
+            "B. It was lighter, cheaper, and easier to produce.",
+            "C. It lasted forever.",
+            "D. It required advanced machinery.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '5. The word "dissemination" in paragraph 2 is closest in meaning to:',
+          a: ["A. loss", "B. protection", "C. spread", "D. collection"],
+          correct: 2,
+        },
+
+        {
+          q: "6. Which of the following can be inferred from the passage?",
+          a: [
+            "A. The spread of paper likely made information more accessible.",
+            "B. Ancient civilizations had no method of recording information before paper.",
+            "C. Paper immediately replaced all other materials worldwide.",
+            "D. Papermaking remained exclusive to China.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "7. What role did Cai Lun play according to the passage?",
+          a: [
+            "A. He invented writing.",
+            "B. He improved a method of producing paper.",
+            "C. He introduced paper to Europe.",
+            "D. He discovered bamboo strips.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "8. Why does the author mention tree bark, hemp, old cloth, and fishing nets?",
+          a: [
+            "A. To explain the materials used in early papermaking.",
+            "B. To compare different types of paper.",
+            "C. To show why paper was expensive.",
+            "D. To describe ancient Chinese agriculture.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "9. Which statement would the author most likely agree with?",
+          a: [
+            "A. The invention of paper had a significant impact on human civilization.",
+            "B. Animal skins were the most effective writing material.",
+            "C. Paper was less practical than bamboo strips.",
+            "D. The spread of paper had little influence on education.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "10. Which of the following best summarizes the passage?",
+          a: [
+            "A. Ancient people relied exclusively on stone tablets for writing.",
+            "B. Paper was invented in China and later contributed greatly to the spread of knowledge and development of societies.",
+            "C. Cai Lun was the first person to write on paper.",
+            "D. Modern paper is identical to ancient paper.",
+          ],
+          correct: 1,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const title = document.createElement("h3");
+        title.innerHTML = item.q;
+        div.appendChild(title);
+
+        item.a.forEach((choice, index) => {
+          const option = document.createElement("div");
+          option.className = "option";
+          option.innerHTML = choice;
+
+          option.onclick = function () {
+            if (div.dataset.done) return;
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (index === item.correct) {
+              option.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              option.classList.add("wrong");
+
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(option);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

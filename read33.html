@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading 33 - The Lasting Impact of Bullying</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        border-left: 6px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .option {
+        display: block;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reading 33</h1>
+
+      <h2>The Lasting Impact of Bullying (C1–C2 Level)</h2>
+
+      <div class="passage">
+        <p>
+          Bullying is often perceived as a temporary aspect of childhood or
+          adolescence, yet its consequences can extend far beyond the school
+          environment. Defined as repeated aggressive behavior intended to harm,
+          intimidate, or humiliate another person, bullying can take various
+          forms, including physical, verbal, social, and online abuse. While
+          some individuals dismiss such behavior as a normal part of growing up,
+          researchers increasingly argue that its effects can be both profound
+          and enduring.
+        </p>
+
+        <p>
+          One reason bullying is particularly damaging is that it often targets
+          aspects of a person's identity, such as appearance, personality,
+          background, or abilities. Victims may gradually internalize the
+          negative messages directed at them, leading to diminished self-esteem
+          and increased feelings of anxiety. In severe cases, prolonged exposure
+          to bullying has been associated with depression, social withdrawal,
+          and difficulties forming trusting relationships. Moreover, the rise of
+          social media has amplified the problem by enabling harassment to
+          continue beyond traditional settings, making it more difficult for
+          victims to escape its effects.
+        </p>
+
+        <p>
+          However, the consequences of bullying are not limited to those who are
+          directly targeted. Studies suggest that bystanders who witness
+          bullying may also experience emotional distress, particularly when
+          they feel powerless to intervene. Furthermore, individuals who engage
+          in bullying behavior may develop unhealthy patterns of aggression if
+          their actions go unchallenged. For this reason, many experts emphasize
+          that preventing bullying requires a collective effort involving
+          schools, families, and communities. Rather than viewing bullying as an
+          isolated conflict between individuals, they argue that it should be
+          recognized as a broader social issue that affects the well-being of
+          everyone involved.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main purpose of the passage?",
+          a: [
+            "A. To explain the causes of bullying.",
+            "B. To discuss the wide-ranging effects of bullying and the need to address it.",
+            "C. To compare traditional bullying with cyberbullying.",
+            "D. To argue that bullying is an unavoidable part of childhood.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '2. The word "enduring" in paragraph 1 is closest in meaning to:',
+          a: ["A. temporary", "B. severe", "C. long-lasting", "D. predictable"],
+          correct: 2,
+        },
+
+        {
+          q: "3. According to the passage, bullying is particularly harmful because it often:",
+          a: [
+            "A. occurs only online.",
+            "B. targets personal aspects of an individual's identity.",
+            "C. involves physical violence.",
+            "D. is ignored by schools.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '4. The word "internalize" in paragraph 2 most nearly means:',
+          a: [
+            "A. reject completely",
+            "B. discuss openly",
+            "C. accept as part of one's beliefs or self-image",
+            "D. hide from others",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "5. Which of the following is mentioned as a possible consequence of prolonged bullying?",
+          a: [
+            "A. Improved resilience in all victims.",
+            "B. Increased academic performance.",
+            "C. Depression and social withdrawal.",
+            "D. Greater popularity among peers.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "6. What can be inferred from the passage?",
+          a: [
+            "A. Bullying affects only the victim.",
+            "B. Cyberbullying may be more difficult to avoid than traditional bullying.",
+            "C. Most bystanders actively intervene.",
+            "D. Bullying always results in long-term psychological harm.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "7. Why does the author mention bystanders in paragraph 3?",
+          a: [
+            "A. To show that the effects of bullying extend beyond the victim.",
+            "B. To suggest that bystanders are responsible for bullying.",
+            "C. To compare victims and aggressors.",
+            "D. To explain why bullying occurs.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "8. Which statement would the author most likely agree with?",
+          a: [
+            "A. Bullying should be viewed as a broader social problem.",
+            "B. Bullying is a normal stage of development.",
+            "C. Families have little influence on bullying prevention.",
+            "D. Online harassment is less harmful than face-to-face bullying.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "9. The author's tone is best described as:",
+          a: [
+            "A. humorous and informal",
+            "B. analytical and concerned",
+            "C. skeptical and dismissive",
+            "D. emotional and accusatory",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "10. Which of the following best summarizes the passage?",
+          a: [
+            "A. Bullying mainly affects school performance.",
+            "B. Bullying has significant consequences for victims, bystanders, and perpetrators, making prevention a shared responsibility.",
+            "C. Cyberbullying has replaced traditional bullying.",
+            "D. The effects of bullying are usually exaggerated.",
+          ],
+          correct: 1,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const title = document.createElement("h3");
+        title.innerHTML = item.q;
+        div.appendChild(title);
+
+        item.a.forEach((choice, index) => {
+          const option = document.createElement("div");
+          option.className = "option";
+          option.innerHTML = choice;
+
+          option.onclick = function () {
+            if (div.dataset.done) return;
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (index === item.correct) {
+              option.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              option.classList.add("wrong");
+
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(option);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Reading 32 - More Than a Toy: The Enduring Appeal of Stuffed Animals
+    </title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        border-left: 6px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .option {
+        display: block;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Reading 32</h1>
+
+      <h2>More Than a Toy: The Enduring Appeal of Stuffed Animals</h2>
+
+      <div class="passage">
+        <p>
+          Stuffed animals are often dismissed as trivial playthings associated
+          exclusively with childhood. Yet their cultural and psychological
+          significance is far more nuanced than such assumptions suggest. For
+          generations, these soft, anthropomorphic objects have occupied a
+          unique position at the intersection of comfort, imagination, and
+          emotional attachment. While children frequently rely on stuffed
+          animals as sources of reassurance during periods of uncertainty,
+          adults are not entirely immune to their appeal. Indeed, the enduring
+          popularity of stuffed animals across age groups raises intriguing
+          questions about the nature of human affection and the psychological
+          value of symbolic objects.
+        </p>
+
+        <p>
+          Psychologists have proposed that stuffed animals can function as
+          transitional objects—items that help individuals navigate emotional
+          challenges by providing a sense of continuity and security. This
+          phenomenon is particularly evident during childhood, when the boundary
+          between reality and imagination remains relatively permeable. However,
+          recent studies indicate that adults may also retain strong attachments
+          to cherished possessions, especially those imbued with personal
+          memories. In such cases, the object's material value is largely
+          irrelevant; what matters is its capacity to evoke nostalgia, preserve
+          emotional connections, and mitigate feelings of loneliness.
+        </p>
+
+        <p>
+          Critics, however, contend that excessive attachment to inanimate
+          objects may impede emotional independence. They argue that reliance on
+          symbolic substitutes for human relationships can become maladaptive if
+          it discourages genuine social interaction. Nevertheless, proponents
+          counter that this perspective oversimplifies the issue. Emotional
+          attachment exists on a spectrum, and deriving comfort from a
+          sentimental object is not inherently pathological. On the contrary,
+          many researchers view such attachments as evidence of humanity's
+          remarkable ability to attribute meaning to otherwise ordinary
+          possessions.
+        </p>
+
+        <p>
+          Ultimately, the persistence of stuffed animals in modern society
+          illustrates a broader truth about human psychology: people rarely
+          value objects solely for their practical utility. Rather, objects
+          often acquire significance through the memories, emotions, and
+          identities associated with them. A stuffed animal may be composed
+          merely of fabric and stuffing, yet its symbolic resonance can far
+          exceed its physical form. Consequently, what appears to be a simple
+          toy may, in reality, serve as a repository of comfort, memory, and
+          personal meaning.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. Which of the following best captures the central thesis of the passage?",
+          a: [
+            "A. Stuffed animals should be regarded primarily as children's toys.",
+            "B. Emotional attachment to stuffed animals reflects broader psychological processes.",
+            "C. Adults who keep stuffed animals are emotionally dependent.",
+            "D. The popularity of stuffed animals is declining in modern society.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '2. The word "nuanced" in paragraph 1 is closest in meaning to:',
+          a: [
+            "A. controversial",
+            "B. exaggerated",
+            "C. complex and subtle",
+            "D. predictable",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "3. The author mentions adults in paragraph 1 primarily to:",
+          a: [
+            "A. challenge the assumption that stuffed animals appeal only to children.",
+            "B. criticize sentimental behavior.",
+            "C. compare childhood and adulthood.",
+            "D. demonstrate the commercial success of stuffed animals.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: '4. The word "permeable" in paragraph 2 most nearly means:',
+          a: [
+            "A. rigidly defined",
+            "B. easily crossed or influenced",
+            "C. imaginary",
+            "D. unstable",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "5. Which of the following can be inferred from paragraph 2?",
+          a: [
+            "A. The emotional significance of an object may exceed its monetary worth.",
+            "B. Adults rarely form emotional attachments to possessions.",
+            "C. Nostalgia is unique to childhood.",
+            "D. Transitional objects lose their value over time.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "6. Why does the author include the critics' viewpoint in paragraph 3?",
+          a: [
+            "A. To refute the entire argument presented earlier.",
+            "B. To introduce an alternative perspective before evaluating it.",
+            "C. To demonstrate widespread agreement among psychologists.",
+            "D. To provide historical context.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '7. The word "maladaptive" in paragraph 3 is closest in meaning to:',
+          a: [
+            "A. beneficial",
+            "B. temporary",
+            "C. ineffective or harmful in a particular context",
+            "D. emotionally intense",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "8. Which statement would the author most likely agree with?",
+          a: [
+            "A. Emotional attachment to objects is inherently unhealthy.",
+            "B. Symbolic objects can serve legitimate psychological functions.",
+            "C. Adults should abandon childhood possessions.",
+            "D. Social relationships can be replaced by sentimental objects.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "9. What function does the final paragraph serve in the passage?",
+          a: [
+            "A. It introduces a contradictory argument.",
+            "B. It narrows the discussion to childhood development.",
+            "C. It broadens the discussion to a general principle about human behavior.",
+            "D. It summarizes research findings.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: '10. The phrase "symbolic resonance" most nearly refers to:',
+          a: [
+            "A. the physical durability of an object.",
+            "B. the emotional and personal significance attached to an object.",
+            "C. the sound produced by a material object.",
+            "D. the popularity of an object within society.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "11. Which of the following would most weaken the author's overall argument?",
+          a: [
+            "A. Evidence that sentimental objects often trigger autobiographical memories.",
+            "B. Research showing that most people value possessions solely for practical purposes.",
+            "C. Studies linking nostalgia to emotional well-being.",
+            "D. Findings that some adults retain childhood possessions.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "12. The tone of the passage is best described as:",
+          a: [
+            "A. dismissive and sarcastic.",
+            "B. analytical and reflective.",
+            "C. emotional and nostalgic.",
+            "D. argumentative and confrontational.",
+          ],
+          correct: 1,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const title = document.createElement("h3");
+        title.innerHTML = item.q;
+        div.appendChild(title);
+
+        item.a.forEach((choice, index) => {
+          const option = document.createElement("div");
+          option.className = "option";
+          option.innerHTML = choice;
+
+          option.onclick = function () {
+            if (div.dataset.done) return;
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (index === item.correct) {
+              option.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              option.classList.add("wrong");
+
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(option);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

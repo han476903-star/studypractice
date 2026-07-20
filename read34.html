@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading 34 - The Power of Self-Discipline</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        border-left: 6px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .option {
+        display: block;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reading 34</h1>
+
+      <h2>The Power of Self-Discipline (C1–C2 Level)</h2>
+
+      <div class="passage">
+        <p>
+          Self-discipline is often regarded as one of the most important factors
+          contributing to long-term success. Unlike motivation, which tends to
+          fluctuate depending on a person's emotions or circumstances,
+          self-discipline enables individuals to continue working toward their
+          goals even when they do not feel inspired. As a result, many
+          psychologists consider self-discipline a stronger predictor of
+          achievement than natural talent or intelligence alone.
+        </p>
+
+        <p>
+          Developing self-discipline, however, is rarely easy. It frequently
+          requires individuals to resist immediate gratification in favor of
+          future rewards. For example, a student may choose to study for an
+          important examination rather than spend hours scrolling through social
+          media. Although such decisions may seem insignificant in isolation,
+          their cumulative effect can be substantial over time. Consistently
+          making choices that align with long-term objectives often leads to
+          gradual but meaningful progress.
+        </p>
+
+        <p>
+          Nevertheless, self-discipline should not be confused with
+          perfectionism. People inevitably encounter setbacks, distractions, and
+          periods of reduced productivity. Those who possess strong
+          self-discipline are not necessarily individuals who never fail;
+          rather, they are those who are willing to resume their efforts after
+          difficulties arise. Consequently, self-discipline is best understood
+          not as the absence of weakness but as the ability to act in accordance
+          with one's goals despite temporary obstacles. In this sense, success
+          is often less a product of extraordinary ability than of sustained and
+          deliberate effort.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main purpose of the passage?",
+          a: [
+            "A. To explain the importance and nature of self-discipline.",
+            "B. To compare intelligence with motivation.",
+            "C. To argue that talent is irrelevant to success.",
+            "D. To describe common study habits.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: '2. The word "fluctuate" in paragraph 1 is closest in meaning to:',
+          a: [
+            "A. disappear",
+            "B. remain stable",
+            "C. vary or change frequently",
+            "D. improve gradually",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "3. According to the passage, self-discipline differs from motivation because it:",
+          a: [
+            "A. is entirely determined by personality.",
+            "B. allows people to continue pursuing goals even when motivation is low.",
+            "C. guarantees success in every situation.",
+            "D. requires exceptional intelligence.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '4. The phrase "immediate gratification" most nearly refers to:',
+          a: [
+            "A. long-term achievement",
+            "B. instant pleasure or satisfaction",
+            "C. social approval",
+            "D. emotional stability",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "5. Which of the following can be inferred from the passage?",
+          a: [
+            "A. Small daily decisions can significantly influence future outcomes.",
+            "B. Intelligent people rarely need self-discipline.",
+            "C. Motivation is more important than self-discipline.",
+            "D. Perfectionism always leads to success.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "6. Why does the author mention a student choosing to study instead of using social media?",
+          a: [
+            "A. To criticize social media.",
+            "B. To provide an example of delaying gratification.",
+            "C. To illustrate the dangers of technology.",
+            "D. To explain academic success.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '7. The word "cumulative" in paragraph 2 is closest in meaning to:',
+          a: [
+            "A. temporary",
+            "B. immediate",
+            "C. increasing through accumulation",
+            "D. unpredictable",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "8. Which statement would the author most likely agree with?",
+          a: [
+            "A. Self-disciplined people never experience setbacks.",
+            "B. Perfectionism and self-discipline are essentially the same.",
+            "C. The ability to persist after failure is a key aspect of self-discipline.",
+            "D. Success depends primarily on natural ability.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "9. The author's tone is best described as:",
+          a: [
+            "A. analytical and encouraging",
+            "B. critical and pessimistic",
+            "C. humorous and informal",
+            "D. emotional and nostalgic",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "10. Which of the following best summarizes the passage?",
+          a: [
+            "A. Self-discipline involves consistently acting in pursuit of long-term goals despite difficulties and distractions.",
+            "B. Motivation is the primary determinant of success.",
+            "C. Perfectionism is essential for achievement.",
+            "D. Success is largely a matter of intelligence.",
+          ],
+          correct: 0,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const title = document.createElement("h3");
+        title.innerHTML = item.q;
+        div.appendChild(title);
+
+        item.a.forEach((choice, index) => {
+          const option = document.createElement("div");
+          option.className = "option";
+          option.innerHTML = choice;
+
+          option.onclick = function () {
+            if (div.dataset.done) return;
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (index === item.correct) {
+              option.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              option.classList.add("wrong");
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(option);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading 29 - The Influence of Beauty Standards</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8fb;
+        margin: 40px;
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .passage {
+        background: #eef7ff;
+        border-left: 6px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .question {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .option {
+        display: block;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eaf5ff;
+      }
+
+      .correct {
+        background: #c8f7c5 !important;
+        border-color: green;
+      }
+
+      .wrong {
+        background: #ffd5d5 !important;
+        border-color: red;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Reading 29</h1>
+
+      <h2>The Influence of Beauty Standards</h2>
+
+      <div class="passage">
+        <p>
+          Beauty standards are the socially constructed ideas of what is
+          considered attractive within a particular culture or period of time.
+          These standards are not fixed; they evolve in response to historical,
+          economic, and social influences. Features that are highly admired in
+          one era or region may be viewed differently in another. Despite their
+          changing nature, beauty standards often exert a powerful influence on
+          how individuals perceive themselves and others. Through advertising,
+          entertainment, and social media, certain appearances are repeatedly
+          presented as desirable, shaping public perceptions of attractiveness.
+        </p>
+
+        <p>
+          While beauty standards can inspire some individuals to improve their
+          appearance or adopt healthier lifestyles, they may also have negative
+          consequences. Constant exposure to unrealistic ideals can lead people
+          to compare themselves unfavorably with others, potentially lowering
+          self-esteem and increasing body dissatisfaction. Critics argue that
+          many beauty standards are difficult, if not impossible, for most
+          people to attain naturally. Consequently, psychologists and social
+          commentators increasingly advocate for a broader and more inclusive
+          definition of beauty, one that recognizes diversity rather than
+          promoting a single ideal.
+        </p>
+      </div>
+
+      <div id="quiz"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main purpose of the passage?",
+          a: [
+            "A. To explain how beauty standards develop and affect people.",
+            "B. To argue that beauty standards should be abolished.",
+            "C. To prove that social media causes low self-esteem.",
+            "D. To compare beauty standards across different countries.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: '2. The word "constructed" in paragraph 1 most nearly means:',
+          a: ["A. discovered", "B. created", "C. measured", "D. inherited"],
+          correct: 1,
+        },
+
+        {
+          q: "3. According to the passage, beauty standards:",
+          a: [
+            "A. remain unchanged throughout history.",
+            "B. are determined entirely by biology.",
+            "C. can vary across cultures and time periods.",
+            "D. affect only people working in the fashion industry.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "4. Why does the author mention advertising, entertainment, and social media?",
+          a: [
+            "A. To identify industries that generate large profits.",
+            "B. To explain how beauty standards are reinforced and spread.",
+            "C. To criticize modern technology.",
+            "D. To compare different forms of communication.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: '5. The word "attain" in paragraph 2 is closest in meaning to:',
+          a: ["A. achieve", "B. measure", "C. observe", "D. maintain"],
+          correct: 0,
+        },
+
+        {
+          q: "6. Which of the following can be inferred from the passage?",
+          a: [
+            "A. Exposure to idealized images may influence people's self-perception.",
+            "B. Beauty standards have become less important over time.",
+            "C. Most beauty standards are based on scientific evidence.",
+            "D. People generally ignore media portrayals of attractiveness.",
+          ],
+          correct: 0,
+        },
+
+        {
+          q: "7. The author's attitude toward beauty standards is best described as:",
+          a: [
+            "A. completely supportive.",
+            "B. strongly opposed.",
+            "C. analytical and balanced.",
+            "D. indifferent.",
+          ],
+          correct: 2,
+        },
+
+        {
+          q: "8. What function does the second paragraph serve?",
+          a: [
+            "A. It provides historical examples.",
+            "B. It discusses both benefits and drawbacks of beauty standards.",
+            "C. It defines the concept of beauty standards.",
+            "D. It summarizes the passage.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "9. Which statement would the author most likely agree with?",
+          a: [
+            "A. There is a single universal definition of beauty.",
+            "B. Diversity should be recognized when discussing attractiveness.",
+            "C. Beauty standards should be strictly enforced.",
+            "D. Physical appearance is the most important aspect of identity.",
+          ],
+          correct: 1,
+        },
+
+        {
+          q: "10. Which of the following best summarizes the passage?",
+          a: [
+            "A. Beauty standards are permanent social rules that benefit everyone.",
+            "B. Beauty standards influence perceptions of attractiveness and can have both positive and negative effects on individuals.",
+            "C. Social media is solely responsible for modern beauty standards.",
+            "D. People should completely ignore their appearance.",
+          ],
+          correct: 1,
+        },
+      ];
+
+      const quiz = document.getElementById("quiz");
+
+      questions.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const title = document.createElement("h3");
+        title.innerHTML = item.q;
+        div.appendChild(title);
+
+        item.a.forEach((choice, index) => {
+          const option = document.createElement("div");
+          option.className = "option";
+          option.innerHTML = choice;
+
+          option.onclick = function () {
+            if (div.dataset.done) return;
+            div.dataset.done = true;
+
+            const result = document.createElement("div");
+            result.className = "result";
+
+            if (index === item.correct) {
+              option.classList.add("correct");
+              result.style.color = "green";
+              result.innerHTML = "✔ Correct!";
+            } else {
+              option.classList.add("wrong");
+
+              div
+                .querySelectorAll(".option")
+                [item.correct].classList.add("correct");
+
+              result.style.color = "red";
+              result.innerHTML =
+                "✘ Wrong! Correct answer: " + item.a[item.correct];
+            }
+
+            div.appendChild(result);
+          };
+
+          div.appendChild(option);
+        });
+
+        quiz.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
