@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vietnamese Lifestyle: Then and Now</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+        line-height: 1.7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+      }
+
+      .passage {
+        font-size: 17px;
+        text-align: justify;
+      }
+
+      .question {
+        margin-top: 30px;
+        padding: 20px;
+        background: #f8f9fc;
+        border-radius: 12px;
+        border-left: 5px solid #4a6cf7;
+      }
+
+      .question h3 {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .option {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eef2ff;
+        border-color: #4a6cf7;
+      }
+
+      .option.correct {
+        background: #d4edda;
+        border-color: #28a745;
+        color: #155724;
+      }
+
+      .option.wrong {
+        background: #f8d7da;
+        border-color: #dc3545;
+        color: #721c24;
+      }
+
+      .feedback {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .correct-answer {
+        margin-top: 5px;
+        color: #155724;
+      }
+
+      .score-box {
+        margin-top: 35px;
+        padding: 20px;
+        text-align: center;
+        background: #eef2ff;
+        border-radius: 12px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Reading: Vietnamese Lifestyle: Then and Now</h1>
+
+      <div class="passage">
+        <p>
+          Over the past few decades, Vietnamese society has undergone
+          considerable changes, and these transformations can be clearly seen in
+          people's lifestyles. In the past, most families lived in extended
+          households, where several generations shared the same home. Family
+          members tended to have a close-knit relationship and often relied on
+          one another for both emotional and practical <b>(1) ______</b>.
+          Nowadays, however, nuclear families have become increasingly common,
+          particularly in urban areas.
+        </p>
+
+        <p>
+          Another noticeable change can be seen in the way people work and
+          communicate. Previously, many Vietnamese people made a living through
+          agriculture and small-scale
+          <b>(2) ______</b>, whereas today's workforce is more likely to be
+          employed in offices, factories, or service industries. The rapid
+          development of technology has also transformed the way people
+          interact. Instead of communicating mainly through face-to-face
+          conversations or handwritten letters, people can now
+          <b>(3) ______</b> information instantly through social media and
+          messaging applications.
+        </p>
+
+        <p>
+          Despite these changes, some traditional values remain deeply rooted in
+          Vietnamese culture. Respect for elders, for instance, continues to be
+          an important <b>(4) ______</b> of family life. Traditional festivals
+          and customs are also preserved, although they may be celebrated in
+          ways that are somewhat different from those in the past. At the same
+          time, young people today enjoy greater freedom to express their
+          individuality and pursue their own <b>(5) ______</b>.
+        </p>
+
+        <p>
+          The contrast between the past and the present is also evident in
+          people's leisure activities. In the past, children often played
+          traditional games outdoors, while modern youngsters are more likely to
+          spend their free time using digital devices. Although technological
+          advances have undoubtedly made life more <b>(6) ______</b>, they have
+          also raised concerns about excessive screen time and the decline of
+          face-to-face interaction. Ultimately, the challenge for modern
+          Vietnamese society is to embrace progress without
+          <b>(7) ______</b> sight of the cultural values that have shaped the
+          nation for generations.
+        </p>
+      </div>
+
+      <!-- QUESTION 1 -->
+      <div class="question">
+        <h3>1. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 1)">
+            A. assistance
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 1)">
+            B. support
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 1)">
+            C. contribution
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 1)">
+            D. cooperation
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="question">
+        <h3>2. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 2)">
+            A. craftsmanship
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 2)">
+            B. manufacture
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 2)">
+            C. commerce
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 2)">
+            D. industry
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="question">
+        <h3>3. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 3)">
+            A. exchange
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 3)">
+            B. transfer
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 3)">
+            C. distribute
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 3)">
+            D. convey
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <!-- QUESTION 4 -->
+      <div class="question">
+        <h3>4. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 4)">
+            A. component
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 4)">
+            B. foundation
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 4)">
+            C. characteristic
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 4)">
+            D. principle
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <!-- QUESTION 5 -->
+      <div class="question">
+        <h3>5. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 5)">
+            A. aspirations
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 5)">
+            B. occupations
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 5)">
+            C. conventions
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 5)">
+            D. obligations
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback5"></div>
+      </div>
+
+      <!-- QUESTION 6 -->
+      <div class="question">
+        <h3>6. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 6)">
+            A. convenient
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 6)">
+            B. accessible
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 6)">
+            C. available
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 6)">
+            D. practical
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback6"></div>
+      </div>
+
+      <!-- QUESTION 7 -->
+      <div class="question">
+        <h3>7. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 7)">
+            A. losing
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'B', 7)">
+            B. missing
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'C', 7)">
+            C. dropping
+          </div>
+          <div class="option" onclick="checkAnswer(this, 'D', 7)">
+            D. escaping
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback7"></div>
+      </div>
+
+      <div class="score-box">Score: <span id="score">0</span> / 7</div>
+    </div>
+
+    <script>
+      // Đáp án đúng
+      const answers = {
+        1: "B",
+        2: "A",
+        3: "A",
+        4: "D",
+        5: "A",
+        6: "A",
+        7: "A",
+      };
+
+      // Theo dõi câu đã trả lời
+      const answered = {};
+
+      function checkAnswer(element, selectedAnswer, questionNumber) {
+        // Nếu đã trả lời câu này thì không cho chọn lại
+        if (answered[questionNumber]) {
+          return;
+        }
+
+        answered[questionNumber] = true;
+
+        const correctAnswer = answers[questionNumber];
+        const feedback = document.getElementById("feedback" + questionNumber);
+
+        // Nếu đúng
+        if (selectedAnswer === correctAnswer) {
+          element.classList.add("correct");
+
+          feedback.innerHTML = "✓ Correct!";
+
+          feedback.style.color = "#28a745";
+
+          updateScore();
+        }
+
+        // Nếu sai
+        else {
+          element.classList.add("wrong");
+
+          feedback.innerHTML =
+            "✗ Incorrect! <div class='correct-answer'>Correct answer: " +
+            correctAnswer +
+            "</div>";
+
+          feedback.style.color = "#dc3545";
+
+          // Tô màu đáp án đúng
+          const options = element.parentElement.children;
+
+          for (let option of options) {
+            const optionLetter = option.innerText.charAt(0);
+
+            if (optionLetter === correctAnswer) {
+              option.classList.add("correct");
+            }
+          }
+        }
+      }
+
+      // Tính điểm
+      let score = 0;
+
+      function updateScore() {
+        score++;
+
+        document.getElementById("score").innerText = score;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Guided Cloze Test - Vietnamese Lifestyle</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+        line-height: 1.7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 30px;
+      }
+
+      .passage {
+        background: #f8f9fc;
+        padding: 30px;
+        border-radius: 12px;
+        font-size: 17px;
+        text-align: justify;
+        margin-bottom: 35px;
+      }
+
+      .passage p {
+        margin-bottom: 18px;
+      }
+
+      .question {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 12px;
+        border-left: 5px solid #4a6cf7;
+      }
+
+      .question h3 {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .option {
+        padding: 12px 15px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eef2ff;
+        border-color: #4a6cf7;
+      }
+
+      .option.correct {
+        background: #d4edda;
+        border-color: #28a745;
+        color: #155724;
+        font-weight: bold;
+      }
+
+      .option.wrong {
+        background: #f8d7da;
+        border-color: #dc3545;
+        color: #721c24;
+        font-weight: bold;
+      }
+
+      .feedback {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .correct-answer {
+        margin-top: 5px;
+        color: #155724;
+      }
+
+      .score-box {
+        margin-top: 35px;
+        padding: 20px;
+        text-align: center;
+        background: #eef2ff;
+        border-radius: 12px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .result-message {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Guided Cloze Test</h1>
+
+      <div class="subtitle">
+        Vietnamese Lifestyle: Then and Now | B2–C1 Level
+      </div>
+
+      <!-- READING PASSAGE -->
+
+      <div class="passage">
+        <p>
+          <strong>Dear Emma,</strong>
+        </p>
+
+        <p>
+          I hope you're doing well! I’m writing to tell you about an interesting
+          cultural programme I recently joined. It was organised to help young
+          people understand how Vietnamese <b>(1) ______</b> has changed over
+          the past few generations.
+        </p>
+
+        <p>
+          During the programme, we visited several traditional villages and
+          spoke to elderly residents about their childhoods. They explained that
+          Vietnamese families used to live mainly in
+          <b>(2) ______</b> households, where grandparents, parents, and
+          children shared the same home. Nowadays, <b>(3) ______</b> families
+          are becoming more common, particularly in big cities.
+        </p>
+
+        <p>
+          What I found most fascinating was how young people today have more
+          <b>(4) ______</b> to choose their own careers and <b>(5) ______</b>
+          their personal goals. However, the speakers also pointed out that this
+          increased independence can sometimes create a generation
+          <b>(6) ______</b>, as young people may have completely different views
+          from their parents.
+        </p>
+
+        <p>
+          I really enjoyed the experience because it gave me greater
+          <b>(7) ______</b> into both traditional and modern Vietnamese society.
+          You should definitely join the programme if you ever have the chance!
+        </p>
+
+        <p>
+          <strong>Best wishes,</strong><br />
+          <strong>Hana</strong>
+        </p>
+      </div>
+
+      <!-- QUESTION 1 -->
+
+      <div class="question">
+        <h3>1. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 1)">
+            A. lifestyle
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 1)">
+            B. household
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 1)">
+            C. generation
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 1)">
+            D. privacy
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <!-- QUESTION 2 -->
+
+      <div class="question">
+        <h3>2. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 2)">
+            A. nuclear
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 2)">
+            B. extended
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 2)">
+            C. democratic
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 2)">
+            D. dependent
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <!-- QUESTION 3 -->
+
+      <div class="question">
+        <h3>3. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 3)">A. monk</div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 3)">
+            B. family-oriented
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 3)">
+            C. nuclear
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 3)">
+            D. popular
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <!-- QUESTION 4 -->
+
+      <div class="question">
+        <h3>4. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 4)">
+            A. opportunity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 4)">
+            B. popularity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 4)">
+            C. promise
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 4)">
+            D. clarity
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <!-- QUESTION 5 -->
+
+      <div class="question">
+        <h3>5. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 5)">
+            A. memorise
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 5)">
+            B. pursue
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 5)">
+            C. replace
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 5)">D. dye</div>
+        </div>
+
+        <div class="feedback" id="feedback5"></div>
+      </div>
+
+      <!-- QUESTION 6 -->
+
+      <div class="question">
+        <h3>6. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 6)">
+            A. privacy
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 6)">B. gap</div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 6)">
+            C. promise
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 6)">
+            D. opportunity
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback6"></div>
+      </div>
+
+      <!-- QUESTION 7 -->
+
+      <div class="question">
+        <h3>7. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 7)">
+            A. clarity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 7)">
+            B. insight
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 7)">
+            C. popularity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 7)">
+            D. household
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback7"></div>
+      </div>
+
+      <!-- SCORE -->
+
+      <div class="score-box">
+        Score: <span id="score">0</span> / 7
+
+        <div class="result-message" id="resultMessage"></div>
+      </div>
+    </div>
+
+    <script>
+      // ĐÁP ÁN ĐÚNG
+      const answers = {
+        1: "A",
+        2: "B",
+        3: "C",
+        4: "A",
+        5: "B",
+        6: "B",
+        7: "B",
+      };
+
+      // Lưu các câu đã trả lời
+      const answered = {};
+
+      // Điểm hiện tại
+      let score = 0;
+
+      function checkAnswer(element, selectedAnswer, questionNumber) {
+        // Không cho trả lời lại
+        if (answered[questionNumber]) {
+          return;
+        }
+
+        // Đánh dấu câu đã trả lời
+        answered[questionNumber] = true;
+
+        // Lấy đáp án đúng
+        const correctAnswer = answers[questionNumber];
+
+        // Lấy phần feedback
+        const feedback = document.getElementById("feedback" + questionNumber);
+
+        // =========================
+        // TRẢ LỜI ĐÚNG
+        // =========================
+
+        if (selectedAnswer === correctAnswer) {
+          // Tô xanh đáp án
+          element.classList.add("correct");
+
+          // Hiện thông báo
+          feedback.innerHTML = "✓ Correct!";
+
+          feedback.style.color = "#28a745";
+
+          // Cộng điểm
+          score++;
+
+          document.getElementById("score").innerText = score;
+        }
+
+        // =========================
+        // TRẢ LỜI SAI
+        // =========================
+        else {
+          // Tô đỏ đáp án đã chọn
+          element.classList.add("wrong");
+
+          // Hiện thông báo
+          feedback.innerHTML =
+            "✗ Incorrect!" +
+            "<div class='correct-answer'>" +
+            "Correct answer: " +
+            correctAnswer +
+            "</div>";
+
+          feedback.style.color = "#dc3545";
+
+          // Lấy tất cả đáp án
+          const options = element.parentElement.children;
+
+          // Tìm và tô xanh đáp án đúng
+          for (let option of options) {
+            const optionLetter = option.innerText.trim().charAt(0);
+
+            if (optionLetter === correctAnswer) {
+              option.classList.add("correct");
+            }
+          }
+        }
+
+        // Cập nhật nhận xét
+        updateResult();
+      }
+
+      // =========================
+      // HIỂN THỊ NHẬN XÉT
+      // =========================
+
+      function updateResult() {
+        const resultMessage = document.getElementById("resultMessage");
+
+        if (score === 7) {
+          resultMessage.innerText = "Excellent! 🎉";
+        } else if (score >= 5) {
+          resultMessage.innerText = "Great job! Keep it up!";
+        } else if (score >= 3) {
+          resultMessage.innerText = "Good effort! Review your mistakes.";
+        } else {
+          resultMessage.innerText = "Keep practising!";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Guided Cloze Test - Vietnamese Society</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+        line-height: 1.7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 30px;
+      }
+
+      .passage {
+        background: #f8f9fc;
+        padding: 30px;
+        border-radius: 12px;
+        font-size: 17px;
+        text-align: justify;
+        margin-bottom: 35px;
+      }
+
+      .passage p {
+        margin-bottom: 18px;
+      }
+
+      .question {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 12px;
+        border-left: 5px solid #4a6cf7;
+      }
+
+      .question h3 {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .option {
+        padding: 12px 15px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .option:hover {
+        background: #eef2ff;
+        border-color: #4a6cf7;
+      }
+
+      .option.correct {
+        background: #d4edda;
+        border-color: #28a745;
+        color: #155724;
+        font-weight: bold;
+      }
+
+      .option.wrong {
+        background: #f8d7da;
+        border-color: #dc3545;
+        color: #721c24;
+        font-weight: bold;
+      }
+
+      .feedback {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .correct-answer {
+        margin-top: 5px;
+        color: #155724;
+      }
+
+      .score-box {
+        margin-top: 35px;
+        padding: 20px;
+        text-align: center;
+        background: #eef2ff;
+        border-radius: 12px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .result-message {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Guided Cloze Test</h1>
+
+      <div class="subtitle">Vietnamese Society: Then and Now | B2–C1 Level</div>
+
+      <!-- ========================= -->
+      <!-- READING PASSAGE -->
+      <!-- ========================= -->
+
+      <div class="passage">
+        <p>
+          <strong>Dear Sarah,</strong>
+        </p>
+
+        <p>
+          Last weekend, I attended a fascinating exhibition about the
+          transformation of Vietnamese society over the past century. The
+          exhibition showed how people's <b>(1) ______</b> has changed as the
+          country has become more urbanised and technologically advanced.
+        </p>
+
+        <p>
+          One of the most striking differences concerns the structure of the
+          family. In the past, it was common for several <b>(2) ______</b> to
+          live together under one roof. Children were often raised by not only
+          their parents but also their grandparents, who played an important
+          role <b>(3) ______</b> passing down traditions and values. Nowadays,
+          however, many young couples prefer to establish
+          <b>(4) ______</b> household of their own.
+        </p>
+
+        <p>
+          The exhibition also explored the changing relationship between parents
+          and children. In traditional families, children were often expected to
+          be
+          <b>(5) ______</b> on their parents and follow their decisions without
+          question. Today, young people are generally given more
+          <b>(6) ______</b> to choose their careers and <b>(7) ______</b> their
+          dreams.
+        </p>
+
+        <p>
+          Nevertheless, this greater independence does not mean that family ties
+          are becoming less important. In fact, many young Vietnamese still
+          consider themselves strongly <b>(8) ______</b> and make an effort to
+          maintain close relationships with their relatives. If families
+          <b>(9) ______</b> enough time together, they will be better able to
+          preserve their emotional bonds despite their increasingly busy
+          lifestyles.
+        </p>
+
+        <p>
+          Of course, modern life has brought both advantages and disadvantages.
+          Technology has made communication much easier, but it has also raised
+          concerns about <b>(10) ______</b> and the loss of face-to-face
+          interaction. <b>(11) ______</b> these challenges, Vietnamese people
+          continue to adapt to a rapidly changing society while trying to
+          preserve their cultural identity.
+        </p>
+
+        <p>
+          I found the exhibition particularly meaningful because it reminded me
+          that the past should not simply be <b>(12) ______</b> by the present.
+          Instead, we should learn from previous generations while embracing
+          positive changes in the modern world.
+        </p>
+
+        <p>
+          <strong>Best wishes,</strong><br />
+          <strong>Lily</strong>
+        </p>
+      </div>
+
+      <!-- ========================= -->
+      <!-- QUESTION 1 -->
+      <!-- ========================= -->
+
+      <div class="question">
+        <h3>1. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 1)">
+            A. lifestyle
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 1)">
+            B. generation
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 1)">
+            C. household
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 1)">
+            D. popularity
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <!-- QUESTION 2 -->
+
+      <div class="question">
+        <h3>2. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 2)">
+            A. generations
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 2)">
+            B. generation
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 2)">
+            C. generational
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 2)">
+            D. generating
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <!-- QUESTION 3 -->
+
+      <div class="question">
+        <h3>3. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 3)">A. at</div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 3)">B. in</div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 3)">C. on</div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 3)">D. for</div>
+        </div>
+
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <!-- QUESTION 4 -->
+
+      <div class="question">
+        <h3>4. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 4)">A. a</div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 4)">B. an</div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 4)">C. the</div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 4)">D. Ø</div>
+        </div>
+
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <!-- QUESTION 5 -->
+
+      <div class="question">
+        <h3>5. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 5)">
+            A. dependent
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 5)">
+            B. dependence
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 5)">
+            C. dependently
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 5)">
+            D. dependency
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback5"></div>
+      </div>
+
+      <!-- QUESTION 6 -->
+
+      <div class="question">
+        <h3>6. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 6)">
+            A. opportunity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 6)">
+            B. opportunities
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 6)">
+            C. opportunistic
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 6)">
+            D. opportunely
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback6"></div>
+      </div>
+
+      <!-- QUESTION 7 -->
+
+      <div class="question">
+        <h3>7. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 7)">
+            A. pursue
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 7)">
+            B. pursuing
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 7)">
+            C. pursued
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 7)">
+            D. pursuit
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback7"></div>
+      </div>
+
+      <!-- QUESTION 8 -->
+
+      <div class="question">
+        <h3>8. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 8)">
+            A. family-oriented
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 8)">
+            B. family-orienting
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 8)">
+            C. family-orientation
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 8)">
+            D. family-orientedly
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback8"></div>
+      </div>
+
+      <!-- QUESTION 9 -->
+
+      <div class="question">
+        <h3>9. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 9)">A. spend</div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 9)">
+            B. will spend
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 9)">C. spent</div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 9)">
+            D. would spend
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback9"></div>
+      </div>
+
+      <!-- QUESTION 10 -->
+
+      <div class="question">
+        <h3>10. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 10)">
+            A. privacy
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 10)">
+            B. promise
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 10)">
+            C. clarity
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 10)">
+            D. popularity
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback10"></div>
+      </div>
+
+      <!-- QUESTION 11 -->
+
+      <div class="question">
+        <h3>11. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 11)">
+            A. Despite
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 11)">
+            B. Because
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 11)">
+            C. Unless
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 11)">
+            D. Therefore
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback11"></div>
+      </div>
+
+      <!-- QUESTION 12 -->
+
+      <div class="question">
+        <h3>12. ______</h3>
+
+        <div class="options">
+          <div class="option" onclick="checkAnswer(this, 'A', 12)">
+            A. replaced
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'B', 12)">
+            B. replacing
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'C', 12)">
+            C. replace
+          </div>
+
+          <div class="option" onclick="checkAnswer(this, 'D', 12)">
+            D. replacement
+          </div>
+        </div>
+
+        <div class="feedback" id="feedback12"></div>
+      </div>
+
+      <!-- ========================= -->
+      <!-- SCORE -->
+      <!-- ========================= -->
+
+      <div class="score-box">
+        Score: <span id="score">0</span> / 12
+
+        <div class="result-message" id="resultMessage"></div>
+      </div>
+    </div>
+
+    <script>
+      // =========================
+      // ĐÁP ÁN ĐÚNG
+      // =========================
+
+      const answers = {
+        1: "A",
+        2: "A",
+        3: "B",
+        4: "A",
+        5: "A",
+        6: "B",
+        7: "A",
+        8: "A",
+        9: "A",
+        10: "A",
+        11: "A",
+        12: "A",
+      };
+
+      // Lưu các câu đã trả lời
+
+      const answered = {};
+
+      // Điểm
+
+      let score = 0;
+
+      // =========================
+      // KIỂM TRA ĐÁP ÁN
+      // =========================
+
+      function checkAnswer(element, selectedAnswer, questionNumber) {
+        // Không cho trả lời lại
+
+        if (answered[questionNumber]) {
+          return;
+        }
+
+        // Đánh dấu câu đã trả lời
+
+        answered[questionNumber] = true;
+
+        // Lấy đáp án đúng
+
+        const correctAnswer = answers[questionNumber];
+
+        // Lấy phần feedback
+
+        const feedback = document.getElementById("feedback" + questionNumber);
+
+        // =========================
+        // NẾU TRẢ LỜI ĐÚNG
+        // =========================
+
+        if (selectedAnswer === correctAnswer) {
+          // Tô xanh
+
+          element.classList.add("correct");
+
+          // Hiện Correct
+
+          feedback.innerHTML = "✓ Correct!";
+
+          feedback.style.color = "#28a745";
+
+          // Cộng điểm
+
+          score++;
+
+          document.getElementById("score").innerText = score;
+        }
+
+        // =========================
+        // NẾU TRẢ LỜI SAI
+        // =========================
+        else {
+          // Tô đỏ đáp án đã chọn
+
+          element.classList.add("wrong");
+
+          // Hiện Incorrect
+          // + đáp án đúng
+
+          feedback.innerHTML =
+            "✗ Incorrect!" +
+            "<div class='correct-answer'>" +
+            "Correct answer: " +
+            correctAnswer +
+            "</div>";
+
+          feedback.style.color = "#dc3545";
+
+          // Lấy tất cả đáp án
+
+          const options = element.parentElement.children;
+
+          // Tìm đáp án đúng
+
+          for (let option of options) {
+            const optionLetter = option.innerText.trim().charAt(0);
+
+            // Tô xanh đáp án đúng
+
+            if (optionLetter === correctAnswer) {
+              option.classList.add("correct");
+            }
+          }
+        }
+
+        // Cập nhật nhận xét
+
+        updateResult();
+      }
+
+      // =========================
+      // HIỂN THỊ KẾT QUẢ
+      // =========================
+
+      function updateResult() {
+        const resultMessage = document.getElementById("resultMessage");
+
+        if (score === 12) {
+          resultMessage.innerText = "Excellent! 🎉";
+        } else if (score >= 10) {
+          resultMessage.innerText = "Outstanding! Keep it up!";
+        } else if (score >= 8) {
+          resultMessage.innerText = "Great job!";
+        } else if (score >= 6) {
+          resultMessage.innerText = "Good effort! Review your mistakes.";
+        } else {
+          resultMessage.innerText = "Keep practising! You can do it!";
+        }
+      }
+    </script>
+  </body>
+</html>
